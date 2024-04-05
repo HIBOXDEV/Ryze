@@ -1,0 +1,743 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #0F0F0F;
+  
+
+    user-select: none; 
+    font-family: "Poppins";
+    padding: 50px;
+    padding-bottom: 0px;
+    scroll-behavior: smooth;
+    max-height: fit-content;
+margin: 0px;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.nav {
+    width: 100%;
+    height: auto; /* Acomoda el contenido y el padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total */
+    position: fixed; /* Hace que la barra de navegación se mantenga fija */
+    top: 0; /* Asegura que la barra se quede en la parte superior de la vista */
+    left: 0; /* Asegura que la barra se extienda desde el lado izquierdo */
+    z-index: 1000; /* Mantiene la barra de navegación sobre otros elementos */
+}
+
+
+
+@keyframes flyUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.rocketlogo img {
+    width: 18.5px;
+    opacity: 0.45;
+    transition: transform 0.3s ease-in-out; /* Transición suave para la propiedad transform */
+}
+
+.rocketlogo:hover img {
+    transform: translateY(-3px);
+    animation: shake 0.5s ease-in-out infinite; /* Aplica el efecto de temblor */
+    opacity: 1;
+}
+
+.rocketlogo.fly img {
+    animation: flyUp 0.4s forwards; /* Ejecuta la animación cuando se hace clic y mantiene el estado final */
+}
+
+@keyframes flyDown {
+    0% {
+       
+        transform: translateY(-200%);
+    }
+    100% {
+       
+        transform: translateY(0);
+    }
+}
+
+.rocketlogo.flyDown img {
+    animation: flyDown 1.0s forwards;
+}
+
+.rocketlogo {
+    cursor: pointer;
+    background-color: #131313;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: #262626 1px solid;
+    border-radius: 100%;
+    transition: transform 0.3s ease-in-out; /* Transición suave para la propiedad transform */
+}
+
+.rocketlogo:hover {
+    transform: translateY(-3px);
+    border: white 1px solid;
+    opacity: 1;
+}
+
+
+.navlinks {
+    position: absolute; /* Posiciona el elemento de forma absoluta dentro del cuerpo */
+    top: 0; /* Coloca el elemento en la parte superior del cuerpo */
+    left: 50%; /* Coloca el elemento a mitad de la anchura del cuerpo */
+    transform: translateX(-50%); /* Centra el elemento horizontalmente */
+    background-color: #131313;
+    border: 1px #262626 solid;
+    border-radius: 200px;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.navlinks a {
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    opacity: 0.45;
+    margin-right: 2px;
+    transition: ease-in-out 0.2s;
+    padding: 10px;
+    
+}
+
+.navlinks a:hover {
+  
+    opacity: 0.90;
+}
+
+
+#contactme{
+    background-color: #131313;
+    border: #262626 2px solid;
+    color: white;
+    opacity: 0.45;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 200px;
+    font-size: 18px;
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
+}
+
+#contactme:hover {
+    background-color: transparent;
+    border: rgba(255, 255, 255, 0.6) 2px solid; /* Border color with opacity */
+    color: white;
+    opacity: 0.9;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 200px;
+    font-size: 18px;
+}
+
+.hero {
+    width: 100%;
+    height: 400px;
+    position: relative; /* Se agrega posición relativa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+}
+
+.allhero{
+  
+    background-image: url(bars.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    
+}
+
+
+
+
+.herocolumn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.maintext {
+    font-weight: 400;
+    font-size: 40px;
+    color: transparent;
+    background-image: linear-gradient(to bottom, #f0ddc7, #EDC597); /* Gradient from top to bottom */
+    -webkit-background-clip: text;
+    background-clip: text;
+   
+   
+}
+
+.maintext {
+    transform: translateY(50px);
+}
+
+
+
+.submain{
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    opacity: 0.45;
+}
+
+
+.herobtn button{
+    padding: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #161616;
+    background: linear-gradient(to bottom, #F1D4B1 0%, #EDC597 100%);
+    width: 309.5px;
+    height: 37.5px;
+   margin-top: 15px;
+    border: none;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+
+
+.herobtn button:hover{
+    padding: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #161616;
+    background: linear-gradient(to bottom, #F1D4B1 0%, #EDC597 100%);
+    width: 309.5px;
+    height: 37.5px;
+   margin-top: 15px;
+    border: none;
+    
+    border-radius: 20px;
+
+
+}
+
+.contributedsection{
+    margin-top: 30px;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contributedtext{
+    font-size: 10px;
+    color: white;
+    opacity: 0.45;
+}
+
+.contributedtext h2{
+    font-weight: 200;
+}
+
+.contributedbox{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 500px;
+    height: 80px;
+    background-color: #131313;
+    border-radius: 20px;
+    border: #262626 1px solid;
+}
+
+
+.contributedbox img{
+    border-radius: 10px;
+    opacity: 0.25;
+}
+#odimg{
+    transform: translateX(-20px);
+}
+.contributedinfo{
+    transform: translateX(-10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+  width: 100%;
+}
+
+.processection{
+  margin-top: 10px;
+    width: 100%;
+    height: 400px;
+    background-image: url(thisone.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.artworktitle{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.cartoon{
+    font-size: 15px;
+    font-weight: 500;
+   text-align: center;
+   color: #707070;
+}
+
+
+.cartoon p {
+   margin-left:3px;
+   transform: translateY(-25px);
+}
+
+.artworkcartoon{
+   margin-top: -50px;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.firscube{
+    width: 393.5px;
+    height: 224px;
+    background-color: #161616;
+    border-radius: 12.5px;
+    border: #222222 2px solid;
+
+}
+
+.pricestitle{
+    transform: translateY(35px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.pricescontainer{
+    margin-top: 50px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.basicplan{
+    width: 381.5px;
+    height: 445.5px;
+   
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+
+    background-image: url(basicbackground.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+.basicplan img{
+    transform: translateY(25px);
+}
+
+.basicplan button{
+    display: flex;
+    justify-content: center;
+    transform: translateY(45px);
+    align-items: center;
+cursor: pointer;
+    margin-left: 17px;
+    margin-bottom: 17px;
+    color: #161616;
+    width: 309.5px;
+    height: 37.5px;
+    border-radius: 12.5px;
+    border: transparent;
+    background: linear-gradient(to bottom, #F1D4B1 0%, #EDC597 100%);
+font-size: 15px;
+font-weight: bold;
+transition: ease-in-out 0.5s;
+}
+
+.basicplan button:hover{
+    border-radius: 20px;
+}
+
+.tos-faqcontainer{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tostitle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.secondcolumn{
+    width: 381px;
+    height: 957px;
+    background-image: url(faqbackr.png);
+    
+    background-repeat: no-repeat;
+    transform: translateY(-3px);
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.questioncontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+    flex-direction: column;
+    transform: translateY(220px);
+    color: #898989;
+    font-size: 15px;
+}
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ensures full width utilization */
+}
+
+.logoquest {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust based on your design needs */
+}
+
+.plusbtn {
+    margin-left: 10px;
+    /* No changes needed here, assuming it's already correctly styled */
+    cursor: pointer; /* Adds a pointer cursor to indicate clickability */
+}
+
+.plusbtn img {
+    width: 12px; /* Ensure consistent width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.answer{
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #161616;
+    transform: translateY(-5px);
+    padding: 5px;
+    border: #222222 1px solid;
+    color: #C0C0C0;
+}
+
+.answer p {
+    text-align: center;
+}
+
+
+
+
+.questioncontainer .logoquest {
+    cursor: pointer;
+}
+
+.answer {
+    transition: ease-in-out 0.3s;
+    margin-top: 10px;
+    display: none;
+}
+.answer:hover {
+    color: #fff3f3;
+}
+
+
+
+
+
+
+
+
+.contacttitle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.contactsection{
+    width: 100%;
+    height: 385px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.contactcont{
+    width: 313px;
+    height: 383px;
+    
+
+       
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+
+    background-image: url(info.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.infooimg img{
+    transform: translateY(20px);
+}
+
+
+.buttonsconttt{
+    gap: 20px;
+    transform: translateY(30px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.buttonalign{
+    gap: 10px;
+    width: 254.5px;
+    height: 37.5px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, #B1CEF1 0%, #97A0ED 100%);
+    color: #5865F2;
+    font-weight: bold;
+    border: #222222 2px solid;
+    cursor: pointer;
+}
+
+#one{
+    color: #1D9BF0;
+
+    background-image: linear-gradient(to bottom, #B1F1F1 0%, #97C9ED 100%);
+}
+
+#two{
+    color: #000000;
+
+    background-image: linear-gradient(to bottom, #F7F9FA 0%, #616F85 100%);
+}
+
+.letsgosection{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.copyright{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #707070;
+}
+
+
+#loadingScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #131313;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que el screen de carga esté por encima de otros elementos */
+}
+
+.rocketLogo {
+    width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+    animation: shakee 0.5s ease-in-out infinite; /* Aplica la animación shake al logo */
+}
+
+@keyframes shakee {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+
+#content {
+    display: none; /* Oculta el contenido de la página mientras se carga */
+}
+
+
+
+
+.extraplan{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+#cartoonui{
+    background-image: url(cartoonone.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+ 
+}
+
+#cartoonuii{
+    background-image: url(cartoontwo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#cartoonuiii{
+    background-image: url(cartoonthree.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#genshini{
+    background-image: url(genshinone.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#genshinii{
+    background-image: url(genshintwo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#genshiniii{
+    background-image: url(genshinthree.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#fantasyone{
+        background-image: url(fantasyone.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+
+#fantasyonee{
+    background-image: url(fantasytwo.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#fantasyoneee{
+    background-image: url(fantasythree.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
