@@ -28,7 +28,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+document.querySelectorAll('.firscube').forEach(item => {
+    item.addEventListener('click', event => {
+        const imageUrl = window.getComputedStyle(item).backgroundImage.slice(5, -2);
+        document.getElementById('popupImage').setAttribute('src', imageUrl);
+        document.getElementById('popup').style.display = 'block';
+    });
+});
 
+// JavaScript for hiding the popup when clicking on it
+document.getElementById('popup').addEventListener('click', function(event) {
+    if (event.target === this) {
+        this.style.display = 'none';
+    }
+});
 
 
 
@@ -81,33 +94,45 @@ rocket.addEventListener('click', function() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.questioncontainer').forEach(container => {
+    // Select all question containers
+    const questionContainers = document.querySelectorAll('.questioncontainer');
+
+    // Activate the first question container by default
+    activateQuestion(questionContainers[0]);
+
+    // Add click event listeners to all question containers
+    questionContainers.forEach(container => {
         container.addEventListener('click', function() {
-            const isOpen = this.querySelector('.plusbtn').getAttribute('data-state') === 'open';
-            
+            // Deactivate any previously opened questions
+            deactivateAllQuestions();
+
             // Find the corresponding answer element
             const answer = this.querySelector('.answer');
 
-            // Close any previously opened answers
-            document.querySelectorAll('.questioncontainer .plusbtn').forEach(btn => {
-                if (btn !== this.querySelector('.plusbtn')) {
-                    btn.setAttribute('data-state', 'closed');
-                    btn.querySelector('img').src = '+.png';
-                }
-            });
-            document.querySelectorAll('.questioncontainer .answer').forEach(ans => {
-                if (ans !== answer) {
-                    ans.style.display = 'none';
-                }
-            });
-
             // Toggle the state of the clicked question container
-            this.querySelector('.plusbtn').setAttribute('data-state', isOpen ? 'closed' : 'open');
-            this.querySelector('.plusbtn img').src = isOpen ? '+.png' : '-.png';
-            answer.style.display = isOpen ? 'none' : 'block'; 
+            this.querySelector('.plusbtn').setAttribute('data-state', 'open');
+            this.querySelector('.plusbtn img').src = '-.png';
+            answer.style.display = 'block';
         });
     });
 });
+
+// Function to deactivate all questions
+function deactivateAllQuestions() {
+    document.querySelectorAll('.questioncontainer').forEach(container => {
+        container.querySelector('.plusbtn').setAttribute('data-state', 'closed');
+        container.querySelector('.plusbtn img').src = '+.png';
+        container.querySelector('.answer').style.display = 'none';
+    });
+}
+
+// Function to activate a specific question container
+function activateQuestion(container) {
+    const answer = container.querySelector('.answer');
+    container.querySelector('.plusbtn').setAttribute('data-state', 'open');
+    container.querySelector('.plusbtn img').src = '-.png';
+    answer.style.display = 'block';
+}
 
 
 document.getElementById('rocket').addEventListener('click', function() {
@@ -188,7 +213,7 @@ function smoothScrollTo(endY, duration) {
 
 document.getElementById('pos').addEventListener('click', function(event) {
     event.preventDefault(); 
-    smoothScrollTo(2085, 600); 
+    smoothScrollTo(1835, 600); 
 });
 
 function smoothScrollTo(endY, duration) {
@@ -214,7 +239,7 @@ function smoothScrollTo(endY, duration) {
 
 document.getElementById('tos').addEventListener('click', function(event) {
     event.preventDefault(); 
-    smoothScrollTo(2660, 600); 
+    smoothScrollTo(2380, 600); 
 });
 
 function smoothScrollTo(endY, duration) {
