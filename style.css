@@ -256,7 +256,7 @@ margin: 0px;
     color: #161616;
     background: linear-gradient(to bottom, #F1D4B1 0%, #EDC597 100%);
     width: 309.5px;
-    height: 37.5px;
+    height: 39.5px;
    margin-top: 15px;
     border: none;
     
@@ -777,3 +777,38 @@ transition: ease-in-out 0.5s;
   
     
 }
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 767px) {
+    body {
+        height: 100vh; /* Altura del viewport */
+        overflow-y: scroll; /* Permitir desplazamiento vertical */
+    }
+    
+    /* Establecer la altura de cada sección al 100% de la pantalla en dispositivos móviles y tabletas */
+    
+        .hero,
+        .contributedsection,
+        .processection,
+        .pricescontainer,
+        .tos-faqcontainer,
+        .contactsection,
+        .letsgosection {
+            height: 100vh; /* Altura del viewport */
+        }
+    
+    
+    /* Opcional: agregar margen entre secciones */
+    .hero + .section,
+    .contributedsection + .section,
+    .processection + .section,
+    .pricescontainer + .section,
+    .tos-faqcontainer + .section,
+    .contactsection + .section,
+    .letsgosection + .section {
+        margin-top: 20px; /* Ajusta según tu preferencia */
+    }
+    
+}
+
+
