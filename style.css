@@ -10,7 +10,7 @@ body{
 
     user-select: none; 
     font-family: "Poppins";
-    padding: 50px;
+    padding: 5%;
     padding-bottom: 0px;
     scroll-behavior: smooth;
     max-height: fit-content;
@@ -29,12 +29,13 @@ margin: 0px;
 
 .nav {
     width: 100%;
-    height: auto; /* Acomoda el contenido y el padding */
+    height: 8%;
+    margin-top: 2%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-decoration: none;
-    padding: 20px;
+    padding: 2%;
     box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total */
     position: fixed; /* Hace que la barra de navegación se mantenga fija */
     top: 0; /* Asegura que la barra se quede en la parte superior de la vista */
@@ -124,7 +125,7 @@ margin: 0px;
     border: 1px #262626 solid;
     border-radius: 200px;
     padding: 15px;
-    margin-top: 30px;
+    
 }
 
 .navlinks a {
@@ -782,52 +783,10 @@ transition: ease-in-out 0.5s;
 
 
 
+@media only screen and (max-width: 768px) {
+    /* Media query para dispositivos móviles con un ancho máximo de 768px */
 
-
-
-/* Estilos generales para dispositivos de escritorio */
-/* Puedes dejar tus estilos actuales aquí */
-
-/* Estilos para dispositivos móviles */
-@media (max-width: 767px) {
     body {
-        padding: 20px; /* Ajusta el padding para dispositivos móviles */
-    }
-
-    .navlinks {
-        margin-top: 20px; /* Ajusta el margen superior */
-    }
-
-    .maintext {
-        font-size: 30px; /* Ajusta el tamaño del texto principal para dispositivos móviles */
-    }
-
-    .submain {
-        font-size: 16px; /* Ajusta el tamaño del texto secundario para dispositivos móviles */
-    }
-
-    .herobtn button {
-        width: 250px; /* Ajusta el ancho del botón del héroe para dispositivos móviles */
-    }
-
-    .contributedsection,
-    .processection,
-    .pricescontainer,
-    .tos-faqcontainer,
-    .contactsection,
-    .letsgosection {
-        height: auto; /* Ajusta la altura de las secciones para dispositivos móviles */
-        margin-top: 20px; /* Ajusta el margen superior de las secciones */
-    }
-
-    .questioncontainer {
-        transform: translateY(120px); /* Ajusta la posición de los contenedores de preguntas */
-    }
-
-    .popup img {
-        max-width: 80%; /* Ajusta el ancho máximo de la imagen emergente para dispositivos móviles */
-        max-height: 80%; /* Ajusta la altura máxima de la imagen emergente para dispositivos móviles */
+        zoom: 200%; /* Establecer el zoom al 200% */
     }
 }
-
-
