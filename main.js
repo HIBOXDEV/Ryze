@@ -342,3 +342,4 @@ function smoothScrollTo(endY, duration) {
 }
 
 
+// Verificar el ancho de la ventana al cargar la página y aplicar el zoom si es necesario

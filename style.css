@@ -778,37 +778,56 @@ transition: ease-in-out 0.5s;
     
 }
 
+
+
+
+
+
+
+
+/* Estilos generales para dispositivos de escritorio */
+/* Puedes dejar tus estilos actuales aquí */
+
 /* Estilos para dispositivos móviles */
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
     body {
-        height: 100vh; /* Altura del viewport */
-        overflow-y: scroll; /* Permitir desplazamiento vertical */
+        padding: 20px; /* Ajusta el padding para dispositivos móviles */
     }
-    
-    /* Establecer la altura de cada sección al 100% de la pantalla en dispositivos móviles y tabletas */
-    
-        .hero,
-        .contributedsection,
-        .processection,
-        .pricescontainer,
-        .tos-faqcontainer,
-        .contactsection,
-        .letsgosection {
-            height: 100vh; /* Altura del viewport */
-        }
-    
-    
-    /* Opcional: agregar margen entre secciones */
-    .hero + .section,
-    .contributedsection + .section,
-    .processection + .section,
-    .pricescontainer + .section,
-    .tos-faqcontainer + .section,
-    .contactsection + .section,
-    .letsgosection + .section {
-        margin-top: 20px; /* Ajusta según tu preferencia */
+
+    .navlinks {
+        margin-top: 20px; /* Ajusta el margen superior */
     }
-    
+
+    .maintext {
+        font-size: 30px; /* Ajusta el tamaño del texto principal para dispositivos móviles */
+    }
+
+    .submain {
+        font-size: 16px; /* Ajusta el tamaño del texto secundario para dispositivos móviles */
+    }
+
+    .herobtn button {
+        width: 250px; /* Ajusta el ancho del botón del héroe para dispositivos móviles */
+    }
+
+    .contributedsection,
+    .processection,
+    .pricescontainer,
+    .tos-faqcontainer,
+    .contactsection,
+    .letsgosection {
+        height: auto; /* Ajusta la altura de las secciones para dispositivos móviles */
+        margin-top: 20px; /* Ajusta el margen superior de las secciones */
+    }
+
+    .questioncontainer {
+        transform: translateY(120px); /* Ajusta la posición de los contenedores de preguntas */
+    }
+
+    .popup img {
+        max-width: 80%; /* Ajusta el ancho máximo de la imagen emergente para dispositivos móviles */
+        max-height: 80%; /* Ajusta la altura máxima de la imagen emergente para dispositivos móviles */
+    }
 }
 
 
